@@ -356,7 +356,6 @@ public class CTabItemTest extends CSSSWTTestCase {
 		}
 	}
 
-	@Disabled("test was commented before bug 443094")
 	@Test
 	void testClassSelectedShowClose() {
 		CTabFolder folder = createTestTabFolder();
