@@ -32,12 +32,16 @@ public class MediaRulesTest {
 	@Test
 	void testMediaRule() throws Exception {
 		String css = """
-				@media screen, print {
-					BODY { line-height: 1.2 }
-					Label { background-color: #FFFFFF }
-				}
-				BODY { line-height: 1.3 }
-				Label { background-color: #FF0000 }""";
+@media screen, print {
+	BODY { line-height: 1.2 }
+	Label { background-color: #FFFFFF }
+}
+BODY { line-height: 1.3 }
+
+@media screen, print {
+	BODY { line-height: 1.4 }
+}
+""";
 		CSSStyleSheet styleSheet = ParserTestUtil.parseCss(css);
 		assertNotNull(styleSheet);
 		// This one is provided only inside the @media so it shouldn't be there
