@@ -780,6 +780,9 @@ public class LineNumberRulerColumn implements IVerticalRulerColumn {
 	}
 
 	private void initializeGC(GC gc, int x, int y, int width, int height) {
+		computeIndentations();
+		if (width != getWidth())
+			layout(true);
 		gc.setFont(fCanvas.getFont());
 		if (fForeground != null) {
 			gc.setForeground(fForeground);
